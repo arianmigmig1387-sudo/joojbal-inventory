@@ -3,33 +3,520 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>جوجبال | قیمت</title>
+<title>جوجبال | سفارش آنلاین</title>
+
 <style>
-*{box-sizing:border-box} body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f5f2ec;color:#181818}
-.wrap{max-width:600px;margin:auto;padding:24px 15px 40px}
-header{text-align:center;margin-bottom:22px}
-.logo{width:130px;height:130px;object-fit:cover;border-radius:50%;background:#fff;box-shadow:0 8px 25px #0001}
-h1{margin:13px 0 4px;font-size:30px}.sub{color:#777;font-size:14px}
-.card{background:#fff;border-radius:20px;padding:18px;margin:12px 0;display:flex;align-items:center;justify-content:space-between;box-shadow:0 5px 18px #0000000d}
-.name{font-size:18px;font-weight:bold}.price{font-size:15px;margin-top:7px;font-weight:bold}
-.unit{font-size:12px;color:#777;font-weight:normal}.status{padding:8px 12px;border-radius:99px;background:#e8f7ec;color:#16833b;font-size:12px;font-weight:bold}
-.footer{text-align:center;color:#999;font-size:12px;margin-top:24px}
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Tahoma,Arial,sans-serif;
+  background:linear-gradient(135deg,#f7f3eb,#eee7da);
+  color:#181818;
+}
+
+.wrap{
+  max-width:650px;
+  margin:auto;
+  padding:22px 14px 45px;
+}
+
+header{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.logo{
+  width:125px;
+  height:125px;
+  object-fit:cover;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 10px 30px #0002;
+}
+
+h1{
+  margin:12px 0 5px;
+  font-size:32px;
+}
+
+.sub{
+  color:#777;
+  font-size:14px;
+}
+
+.search{
+  width:100%;
+  border:0;
+  outline:none;
+  padding:15px 18px;
+  border-radius:15px;
+  font-size:14px;
+  margin:12px 0;
+  box-shadow:0 5px 20px #0000000d;
+}
+
+.card{
+  background:#fff;
+  border-radius:20px;
+  padding:17px;
+  margin:12px 0;
+  box-shadow:0 7px 22px #0000000d;
+}
+
+.product-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.name{
+  font-size:18px;
+  font-weight:bold;
+}
+
+.price{
+  font-size:15px;
+  margin-top:7px;
+  font-weight:bold;
+}
+
+.unit{
+  font-size:12px;
+  color:#777;
+  font-weight:normal;
+}
+
+.status{
+  padding:7px 11px;
+  border-radius:99px;
+  background:#e8f7ec;
+  color:#16833b;
+  font-size:11px;
+  font-weight:bold;
+  white-space:nowrap;
+}
+
+.controls{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:15px;
+}
+
+.controls button{
+  border:0;
+  width:38px;
+  height:38px;
+  border-radius:12px;
+  font-size:21px;
+  cursor:pointer;
+  background:#eee;
+}
+
+.quantity{
+  min-width:30px;
+  text-align:center;
+  font-weight:bold;
+}
+
+.add{
+  flex:1;
+  border:0;
+  border-radius:12px;
+  padding:11px;
+  background:#181818;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.cart{
+  background:#fff;
+  border-radius:22px;
+  padding:20px;
+  margin-top:22px;
+  box-shadow:0 8px 25px #0002;
+}
+
+.cart h2{
+  margin-top:0;
+  font-size:21px;
+}
+
+.cart-item{
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1px solid #eee;
+  padding:10px 0;
+  font-size:14px;
+}
+
+.total{
+  display:flex;
+  justify-content:space-between;
+  font-size:18px;
+  font-weight:bold;
+  margin:17px 0;
+}
+
+input,textarea{
+  width:100%;
+  border:1px solid #ddd;
+  outline:none;
+  border-radius:13px;
+  padding:13px;
+  margin:6px 0;
+  font-family:inherit;
+  font-size:14px;
+}
+
+textarea{
+  min-height:80px;
+  resize:vertical;
+}
+
+.whatsapp{
+  width:100%;
+  border:0;
+  border-radius:15px;
+  padding:15px;
+  background:#25D366;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  margin-top:8px;
+}
+
+.empty{
+  color:#888;
+  text-align:center;
+  font-size:14px;
+}
+
+.footer{
+  text-align:center;
+  color:#999;
+  font-size:12px;
+  margin-top:25px;
+}
 </style>
 </head>
+
 <body>
+
 <div class="wrap">
+
 <header>
 <img class="logo" src="jojbal_logo-1.jpg" alt="لوگوی جوجبال">
-<h1>جوجبال</h1>
-<div class="sub">موجودی و قیمت امروز</div>
+<h1>جوجبال 🍗</h1>
+<div class="sub">قیمت، موجودی و سفارش آنلاین</div>
 </header>
 
-<div class="card"><div><div class="name">🍗 کتف و بال</div><div class="price">۱٬۲۰۰ تومان <span class="unit">هر کیلو</span></div></div><span class="status">30 موجود</span></div>
-<div class="card"><div><div class="name">🍗 مرغ بریان</div><div class="price">۱٬۲۰۰ تومان <span class="unit">هر عدد</span></div></div><span class="status">10 موجود</span></div>
-<div class="card"><div><div class="name">🍗 ران مرغ</div><div class="price">۵۵۰ تومان <span class="unit">هر عدد</span></div></div><span class="status">21 موجود</span></div>
-<div class="card"><div><div class="name">🥔 سیب‌زمینی کبابی</div><div class="price">۲۵۰ تومان <span class="unit">هر پرس</span></div></div><span class="status">50 موجود</span></div>
+<input
+  class="search"
+  id="search"
+  type="text"
+  placeholder="🔍 جستجوی محصول..."
+  oninput="searchProducts()"
+>
 
-<div class="footer">برای اطلاع از قیمت و موجودی، این صفحه را بررسی کنید.</div>
+<div id="products"></div>
+
+<div class="cart">
+
+<h2>🛒 سبد سفارش</h2>
+
+<div id="cartItems">
+  <div class="empty">هنوز محصولی انتخاب نکرده‌اید</div>
 </div>
+
+<div class="total">
+  <span>مبلغ کل</span>
+  <span id="total">۰ تومان</span>
+</div>
+
+<input id="customerName" placeholder="نام و نام خانوادگی">
+
+<input id="customerPhone" placeholder="شماره تماس">
+
+<input id="address" placeholder="آدرس تحویل">
+
+<textarea id="description" placeholder="توضیحات سفارش (اختیاری)"></textarea>
+
+<button class="whatsapp" onclick="sendOrder()">
+  📲 ثبت سفارش در واتساپ
+</button>
+
+</div>
+
+<div class="footer">
+برای اطلاع از قیمت و موجودی، این صفحه را بررسی کنید.
+</div>
+
+</div>
+
+<script>
+
+const products = [
+  {
+    name:"🍗 کتف و بال",
+    price:1200,
+    unit:"هر کیلو",
+    stock:30
+  },
+  {
+    name:"🍗 مرغ بریان",
+    price:1200,
+    unit:"هر عدد",
+    stock:10
+  },
+  {
+    name:"🍗 ران مرغ",
+    price:550,
+    unit:"هر عدد",
+    stock:21
+  },
+  {
+    name:"🥔 سیب‌زمینی کبابی",
+    price:250,
+    unit:"هر پرس",
+    stock:50
+  }
+];
+
+let cart = {};
+
+function formatNumber(number){
+  return number.toLocaleString("fa-IR");
+}
+
+function renderProducts(list = products){
+
+  const container = document.getElementById("products");
+
+  container.innerHTML = "";
+
+  list.forEach((product,index)=>{
+
+    const quantity = cart[index] || 0;
+
+    container.innerHTML += `
+      <div class="card">
+
+        <div class="product-top">
+
+          <div>
+            <div class="name">${product.name}</div>
+
+            <div class="price">
+              ${formatNumber(product.price)} تومان
+              <span class="unit">${product.unit}</span>
+            </div>
+          </div>
+
+          <span class="status">
+            ${formatNumber(product.stock)} موجود
+          </span>
+
+        </div>
+
+        <div class="controls">
+
+          <button onclick="changeQuantity(${index},-1)">−</button>
+
+          <span class="quantity">${formatNumber(quantity)}</span>
+
+          <button onclick="changeQuantity(${index},1)">+</button>
+
+          <button class="add" onclick="addToCart(${index})">
+            افزودن به سبد
+          </button>
+
+        </div>
+
+      </div>
+    `;
+  });
+}
+
+function changeQuantity(index,change){
+
+  let quantity = cart[index] || 0;
+
+  quantity += change;
+
+  if(quantity < 0) quantity = 0;
+
+  if(quantity > products[index].stock){
+    alert("تعداد انتخابی بیشتر از موجودی است.");
+    quantity = products[index].stock;
+  }
+
+  if(quantity === 0){
+    delete cart[index];
+  }else{
+    cart[index] = quantity;
+  }
+
+  renderProducts();
+  renderCart();
+}
+
+function addToCart(index){
+
+  let quantity = cart[index] || 0;
+
+  if(quantity >= products[index].stock){
+    alert("این محصول به حداکثر موجودی رسیده است.");
+    return;
+  }
+
+  cart[index] = quantity + 1;
+
+  renderProducts();
+  renderCart();
+}
+
+function renderCart(){
+
+  const container = document.getElementById("cartItems");
+
+  const keys = Object.keys(cart);
+
+  if(keys.length === 0){
+
+    container.innerHTML =
+      `<div class="empty">هنوز محصولی انتخاب نکرده‌اید</div>`;
+
+    document.getElementById("total").innerText = "۰ تومان";
+
+    return;
+  }
+
+  let total = 0;
+
+  container.innerHTML = "";
+
+  keys.forEach(index=>{
+
+    const product = products[index];
+    const quantity = cart[index];
+
+    const price = product.price * quantity;
+
+    total += price;
+
+    container.innerHTML += `
+      <div class="cart-item">
+        <span>
+          ${product.name} × ${formatNumber(quantity)}
+        </span>
+
+        <span>
+          ${formatNumber(price)} تومان
+        </span>
+      </div>
+    `;
+  });
+
+  document.getElementById("total").innerText =
+    formatNumber(total) + " تومان";
+}
+
+function searchProducts(){
+
+  const text =
+    document.getElementById("search").value.trim().toLowerCase();
+
+  const filtered = products.filter(product =>
+    product.name.toLowerCase().includes(text)
+  );
+
+  renderProducts(filtered);
+}
+
+function sendOrder(){
+
+  const keys = Object.keys(cart);
+
+  if(keys.length === 0){
+    alert("لطفاً حداقل یک محصول به سبد اضافه کنید.");
+    return;
+  }
+
+  const name =
+    document.getElementById("customerName").value.trim();
+
+  const phone =
+    document.getElementById("customerPhone").value.trim();
+
+  const address =
+    document.getElementById("address").value.trim();
+
+  const description =
+    document.getElementById("description").value.trim();
+
+  if(!name || !phone || !address){
+
+    alert("لطفاً نام، شماره تماس و آدرس را وارد کنید.");
+    return;
+  }
+
+  let total = 0;
+
+  let message =
+`🛒 سفارش جدید از سایت جوجبال
+
+👤 نام: ${name}
+📞 شماره تماس: ${phone}
+
+📦 سفارش:
+
+`;
+
+  keys.forEach(index=>{
+
+    const product = products[index];
+    const quantity = cart[index];
+    const price = product.price * quantity;
+
+    total += price;
+
+    message +=
+`• ${product.name}
+  تعداد: ${quantity} ${product.unit}
+  مبلغ: ${formatNumber(price)} تومان
+
+`;
+  });
+
+  message +=
+`💰 مبلغ کل: ${formatNumber(total)} تومان
+
+📍 آدرس:
+${address}
+
+📝 توضیحات:
+${description || "ندارد"}`;
+
+  const whatsappNumber = "989307012787";
+
+  const url =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+  window.open(url,"_blank");
+}
+
+renderProducts();
+renderCart();
+
+</script>
+
 </body>
 </html>
